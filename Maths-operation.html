@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maths-Operations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            border: 1px solid black;
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        header {
+            width: 100%;
+            text-align: center;
+        }
+        .form-input {
+            margin: 15px 0;
+        }
+        .form-input input {
+            margin-left: 15px;
+            padding: 5px;
+            width: 100px;
+        }
+        .operations {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .operations button {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Maths Operations</h1>
+        </header>
+        <div class="form-input">
+            <label for="num1">Enter 1st Number:</label>
+            <input type="number" id="num1">
+        </div>
+        <div class="form-input">
+            <label for="num2">Enter 2nd Number:</label>
+            <input type="number" id="num2">
+        </div>
+        <div class="operations">
+            <button onclick="calculate('+')">+</button>
+            <button onclick="calculate('-')">-</button>
+            <button onclick="calculate('*')">*</button>
+            <button onclick="calculate('/')">/</button>
+            <button onclick="calculate('%')">%</button>
+        </div>
+        <div class="result">
+            Answer is: <span id="result">0</span>
+        </div>
+    </div>
+    <script>
+        function calculate(operation) {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var result;
+            
+            if(operation === '+'){
+                result = num1 + num2;
+            }
+            else if(operation === '-'){
+                result = num1 - num2;
+            }
+            else if(operation === '*'){
+                result = num1 * num2;
+            }
+            else if (operation === '/'){
+                result = num1 / num2;
+            }
+            else if(operation === '%'){
+                result = num1 % num2;
+            }
+            
+            document.getElementById('result').innerText = result;
+        }
+    </script>
+</body>
+</html>
